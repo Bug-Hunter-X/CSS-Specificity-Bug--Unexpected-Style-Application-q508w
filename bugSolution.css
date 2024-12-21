@@ -1,0 +1,25 @@
+The solution involves understanding and adjusting the order of CSS rules to resolve the issue.  Here's how you can modify the CSS to achieve the desired outcome:
+
+```css
+.container {
+  background-color: lightblue;
+}
+
+.container p {
+  background-color: lightgreen;
+}
+
+p {
+  background-color: yellow;
+}
+
+.container .special {
+  background-color: lightcoral;
+}
+
+.special {
+  background-color: pink;
+}
+```
+
+By ensuring that the style declaration for `.container .special` appears *after* the declaration for `.special`, specificity rules correctly apply the `lightcoral` background color to the `.container .special` element.  The solution prioritizes maintaining clean CSS structure over using the `!important` flag.
