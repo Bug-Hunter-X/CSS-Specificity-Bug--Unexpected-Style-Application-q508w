@@ -1,0 +1,25 @@
+The following CSS code snippet demonstrates an uncommon issue related to the specificity of CSS selectors and the cascading nature of CSS stylesheets.
+
+```css
+.container {
+  background-color: lightblue;
+}
+
+.container p {
+  background-color: lightgreen;
+}
+
+p {
+  background-color: yellow;
+}
+
+.container .special {
+  background-color: lightcoral;
+}
+
+.special {
+  background-color: pink;
+}
+```
+
+The unexpected behavior arises when the `.special` class is applied within the `.container` div.  Despite the higher specificity of `.container .special`, the background color ends up being `pink` instead of `lightcoral` due to the order of CSS rules, and specificity rules.
